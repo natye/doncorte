@@ -12,9 +12,17 @@ namespace bookStore.Controllers
       //  {
       //      return View();
       //  }
-        public string Index()
+        public ViewResult Index()
         {
-            return "book Store";
+            return View();
+        }
+        public ViewResult AboutUs()
+        {
+            return View();
+        }
+        public ViewResult ContactUs()
+        {
+            return View();
         }
     }
 }
