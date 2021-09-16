@@ -55,6 +55,9 @@ namespace bookStore
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapDefaultControllerRoute();
+                //endpoints.MapControllerRoute(
+                //    name: "Default",
+                //    pattern: "bookApp /{ Controllers = Home }/{ action = Index}/{ Id?}");
             });
         }
     }

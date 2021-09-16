@@ -11,6 +11,12 @@ a.navbar-brand {
 a {
   color: #0366d6;
 }
+.logo{
+    width:400px;
+    height:auto;
+    float:left;
+    overflow:hidden;
+}
 
 .btn-primary {
   color: #fff;
@@ -38,8 +44,11 @@ html {
 .border-top {
   border-top: 1px solid #e5e5e5;
 }
+.jumbotron{
+    background:none;
+}
 .border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 .box-shadow {

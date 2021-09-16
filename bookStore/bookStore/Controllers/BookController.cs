@@ -18,17 +18,29 @@ namespace bookStore.Controllers
         }
        public ViewResult GetAllBooks(){
            var data= _bookRepository.GetAllBooks();
-            return View();
+            return View(data);
         }
-        public BookModel GetBook(int id)
+        [
+            Route("bookdetails/{id}")]
+        public ViewResult GetBook(int id, string NameBook)
         {
-            return _bookRepository.GeBookBYId(id);
+            var data = _bookRepository.GeBookBYId(id);
+            return View(data);
         }
         public List<BookModel> SearchBooks(string bookname, string autherName)
         {
             return _bookRepository.SearchBook(bookname, autherName);
         }
         public IActionResult Index()
+        {
+            return View();
+        }
+        public ViewResult AddBook()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ViewResult AddBook(BookModel bookmodel)
         {
             return View();
         }
