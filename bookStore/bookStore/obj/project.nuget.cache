@@ -1,8 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "dnCvd+xAuaeH3XIbG9mIQYpgwS7oc2WiQVl7XBfeW16p5Pu4GT7dYUKvNbrVcHyOZNk//GidMpSRnHIdOiRmkw==",
+  "dgSpecHash": "/1maBE/k3K0p96mlAoD9HUQ5e52HFmu99AYrnlnr/PaqYaX/BS3k720IU8GzIaaHzsZw2zpkiySTLW7pSy5SWA==",
   "success": true,
   "projectFilePath": "C:\\Users\\HP\\source\\repos\\doncorte\\new\\bookStore\\bookStore\\bookStore.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\HP\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\microsoft.netcore.targets\\1.0.1\\microsoft.netcore.targets.1.0.1.nupkg.sha512"
+  ],
   "logs": []
 }
