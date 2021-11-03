@@ -2,9 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using bookStore.Data;
+using bookStore.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -29,6 +32,11 @@ namespace bookStore
             //services.AddRazorPages();
             //services.AddMvc();
             services.AddControllersWithViews();
+            services.AddDbContext<BookStoreContext>(options => options.UseSqlServer(("Server=.;Database=BooksStore;Integrated Security=True;")));
+            services.AddScoped<IBookRepository, BookRepository>();
+            services.AddScoped<ILanguageRepository, LanguageRepository>();
+
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,11 +62,17 @@ namespace bookStore
 
             app.UseEndpoints(endpoints =>
             {
-                
-                endpoints.MapDefaultControllerRoute();
+                endpoints.MapControllers();
+
+                //endpoints.MapDefaultControllerRoute();
+                ////endpoints.MapControllerRoute(
+                ////    name: "Default",
+                ////    pattern: "bookApp /{ Controllers = Home }/{ action = Index}/{ Id?}");
+
                 //endpoints.MapControllerRoute(
-                //    name: "Default",
-                //    pattern: "bookApp /{ Controllers = Home }/{ action = Index}/{ Id?}");
+                //    name: "AboutUs",
+                //    pattern: "about-us/{id?}",
+                //    defaults: new { controller="Home", action="AboutUs"});
             });
         }
     }

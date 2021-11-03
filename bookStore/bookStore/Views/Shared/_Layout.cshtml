@@ -12,63 +12,20 @@
     <title>@ViewData["Title"]| Book Store</title>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <img asp-append-version="true" width="30" height="30 " src="~/img/Bench-Maji-Zone-1.jpg" />
-            <a class="navbar-brand" href="#">Book Store</a>
-
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav float-right">
-                    <li class="nav-item">
-
-                        <button class="btn btn-outline-primary">Login</button>
-                        <button class="btn btn-primary " type="submit">
-                            Registor
-                        </button>
-                    </li>
-                </ul>
-                <ul class="navbar-nav flex-grow-1">
-                    <li class="nav-item ">
-                        <a class="nav-link text-dark" asp-controller="Home" asp-action="index">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link text-dark" asp-controller="Home" asp-action="aboutus">About Us</a>
-                    </li>
-                    <li class="nav-item text-dark">
-                        <a class="nav-link" asp-controller="Home" asp-action="contactus">Contact Us</a>
-                    </li>
-                    <li class="nav-item text-dark">
-                        <a class="nav-link" asp-controller="Book" asp-action="getallbooks">All Books</a>
-                    </li>
-                    <li class="nav-item text-dark">
-                        <a class="nav-link" asp-controller="Book" asp-action="addbook">Add Books</a>
-                    </li>
-
-
-
-                </ul>
-
-
-
-
-            </div>
-        </nav>
-    </header>
+  <partial name="_headear"/>
     <div>
         <main role="main">  @RenderBody()</main>
 
     </div>
-    <footer class="border-top footer text-muted text-center">
-        <div class="container">    
-            Copyright &copy; book store @DateTime.Now.Year;
-        </div>
-    </footer>
+    <div class="container"></div>
+  <partial name="_footer"/>
+
     <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+    <script src="~/jquery-validation/dist/additional-methods.js"></script>
+
+
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
     @RenderSection("scripts", required: false)

@@ -11,7 +11,7 @@
         {
             <div class="col-md-4">
                 <div class="card mb-4 shadow-sm">
-                    <svg class="bd-placeholder-img card-img-top" width="100" height="225" xml:space="http://www.unprofound.com/images/main2.jpg"></svg>
+                    <img src="@book.CoverImageUrl" class="img-thumbnail"/>
                     <h3>@book.Title</h3>
                     <p class="card-text">@book.Description</p>
                     <div class="d-flex justify-content-between align-items-center">
@@ -20,6 +20,7 @@
                            asp-fragment ="similarbooks"class="btn btn-sm btn-outline-secondary">View Details</a>
                     </div>
                     <small class=" text-muted">@book.Auther</small>
+                    @*<div>@book.Language</div>*@
 
                 </div>
 

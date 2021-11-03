@@ -1,31 +1,80 @@
 ﻿@model BookModel
     <div class="container">
         <h1 class="display-4">Add Books</h1>
-        <form method="post" asp-action="AddBook" asp-controller="Book">
-            <div class="form-group">
-                <label asp-for="Title">Title</label>
-                <input type="text" asp-for="Title" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label asp-for="Description">Description</label>
+        @if (ViewBag.isSccess==true) { <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Congratulation</strong>You successfully add the data.<br />
 
-                <textarea type="text" asp-for="Description" class="form-control"></textarea>
-            </div>
-            <div class="form-group">
-                <label asp-for="Category">Category</label>
-                <input type="text" asp-for="Category" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label asp-for="Auther">Auther</label>
-                <input type="text" asp-for="Auther" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label asp-for="TotalPage">TotalPage</label>
-                <input type="text" asp-for="TotalPage" class="form-control" />
-            </div>
-            <div class="form-group">
-                <input type="submit" class="btn-primary" value="add book" />
-            </div>
+    for more information click  <a asp-controller="Book" asp-action="GetBook" asp-route-id="@ViewBag.bookId">here</a> .
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
 
-        </form>
+</div>
+        }
+    <form method="post" enctype="multipart/form-data" asp-action="AddBook" asp-controller="Book">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="LanguageId"></label>
+            <select asp-for="LanguageId" class="form-control" asp-items="ViewBag.Language" required>
+                <option value="">Please choose the Language</option>
+            </select>
+            <span asp-validation-for="LanguageId" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Title">Title</label>
+            <input type="text" asp-for="Title" class="form-control" />
+            <span asp-validation-for="Title" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Description">Description</label>
+
+            <textarea type="text" asp-for="Description" class="form-control"></textarea>
+            <span asp-validation-for="Description" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="Category">Category</label>
+            <input type="text" asp-for="Category" class="form-control" />
+
+        </div>
+        <div class="form-group">
+            <label asp-for="Auther">Auther</label>
+            <input type="text" asp-for="Auther" class="form-control" />
+            <span asp-validation-for="Auther" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="TotalPage"></label>
+            <input type="text" asp-for="TotalPage" class="form-control" />
+            <span asp-validation-for="TotalPage" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="CoverPhoto"></label>
+            <div class="custom-file">
+                <input type="file" asp-for="CoverPhoto" class="form-control" />
+                <label class="custom-file-label" asp-for="CoverPhoto">Choose File</label>
+            </div>
+            <span asp-validation-for="CoverPhoto" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="GalleryFiles"></label>
+            <div class="custom-file">
+                <input type="file" asp-for="GalleryFiles" class="form-control" multiple />
+                <label class="custom-file-label" asp-for="GalleryFiles">Choose File</label>
+            </div>
+            <span asp-validation-for="GalleryFiles" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="BookPdf"></label>
+            <div class="custom-file">
+                <input type="file" asp-for="BookPdf" class="form-control" />
+                <label class="custom-file-label" asp-for="BookPdf">Choose File</label>
+            </div>
+            <span asp-validation-for="BookPdf" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn-primary" value="add book" />
+        </div>
+
+    </form>
     </div>
